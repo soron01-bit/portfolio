@@ -191,6 +191,7 @@ nav {
     margin-bottom: 1rem;
     background: linear-gradient(90deg, #fff, var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -279,7 +280,19 @@ nav {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     animation: morph 8s ease-in-out infinite;
     box-shadow: 0 0 50px rgba(123, 44, 191, 0.5);
-    opacity: 0.8;
+    overflow: hidden;
+}
+
+#profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover #profile-img {
+    transform: scale(1.08);
 }
 
 @keyframes morph {
